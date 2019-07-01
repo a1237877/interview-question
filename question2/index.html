@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 关于call  bind  apply -->
+  <script>
+    // var a = {
+    //   user:'蜗牛',
+    //   fn:function(){
+    //     console.log(this.user)  
+    //   }
+    // }
+    // var b = a.fn;
+    // b()  //结果是undefine
+    // a.fn()  //结果是蜗牛
+    // var b =a.fn();
+    // b.call(a)   //把B的作用域变为A 此时this就是指向A
+    // // b.apply(a)
+
+
+    var a = {
+      user:'蜗牛',
+      fn:function(n){
+        console.log(this.user)  
+        console.log(n + 1)
+      }
+    }
+    var b = a.fn
+    // b.call(a,5)
+    // b.apply(a,[9])
+    // b.call()
+    b.bind(a,1)()
+  
+  </script>
+</body>
+</html>
