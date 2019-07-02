@@ -22,7 +22,7 @@
     console.log(baz)
   </script> -->
 
-  <script>
+  <!-- <script>
     //浅拷贝
     let obj = {
       name:'蜗牛',
@@ -43,6 +43,37 @@
       obj.name = '蜗牛小生'
       console.log(obj4)
 
+  </script> -->
+
+  <script>
+    //深拷贝原理
+    function deepClone(obj,hash= new WeakMap()){//使用递归拷贝
+      if(obj instanceof RegExp){
+        return RegExp(obj)
+      }
+      if(obj instanceof Date){
+        return Date(obj)
+      }
+      if(obj ===null 
+      || typeof obj !== 'object'){
+        //如果不是复杂的数据类型 直接返回
+        return obj
+      }
+      if(hash.has(obj)){
+        return hash.get(obj)
+      }
+      //如果obj是数组 那么obj.constructor 是 [function :Array]
+      //如果obj是对象 那么obj.constructor 是 [function :Object]
+      let t = new obj.constructor()
+      hash.get(obj,t)
+      for(let key in obj){
+        //递归
+        if(obj.hasOwnProperty(key)){  //是否是自身的属性
+          t[key] = deepClone(obj[key],hash)
+        }
+      }
+      return t
+    }
   </script>
 </body>
 
