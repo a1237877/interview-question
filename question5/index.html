@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- [1,2,3,4,4,3] -->
+  <script>
+    // function uniq(arr) {
+    //   let res = [arr[0]]
+    //   for (let i = 1; i < arr.length; i++) {
+    //     let flag = true
+    //     for (let j = 0; j < res.length; j++) {
+    //       if (arr[i] === res[j]) {
+    //         flag = false;
+    //         break
+    //       }
+    //     }
+    //     if (flag) {
+    //       res.push(arr[i])
+    //     }
+    //   }
+    //   return res
+
+    // }
+    // console.log(uniq([1, 2, 2, 3, 3, 5]))
+
+// -------------------------------
+    // function uniq(arr){
+    //   return [...new Set(arr)]  //set类数组
+    // }
+    // console.log(uniq([1,2,2,3,3,4]))
+
+    // ----------------------------
+    // function uniq(arr){
+    //   let res = []
+    //   for(let i=0;i<arr.length;i++){
+    //     if(res.indexOf(arr[i]) === -1){  //检查res数组的下标是否存在 不存在为-1 就表示res没有这个数据
+    //       res.push(arr[i])
+    //     }
+    //   }
+    //   return res
+    // }
+    // console.log(uniq([1,2,2,3,3,5]))
+
+
+    // ----------------------------
+    // function uniq(arr){
+    //   let res = []
+    //   for(let i=0;i<arr.length;i++){
+    //     if(!res.includes(arr[i])){
+    //       res.push(arr[i])
+    //     }
+    //   }
+    //   return res
+    // }
+    // console.log(uniq([1,2,2,3,3,5]))
+
+
+    // -----------------------------
+    // function uniq(arr){
+    //   let map = new Map()
+    //   let res = new Array()
+    //   for(let i=0;i<arr.length;i++){
+    //     if(map.has(arr[i])){   //检测是否存在指定元素
+    //       map.set(arr[i],true)   //key值 和value值
+    //     }else{
+    //       map.set(arr[i],false)
+    //       res.push(arr[i])
+    //     }
+    //   }
+    //   return res
+
+    // }
+    // console.log(uniq([1,2,2,3,3,5]))
+
+
+    // --------------------------
+    // function uniq(arr){
+    //   return arr.reduce((prev,cur)=>{
+    //     return prev.includes(cur)?prev:[...prev,cur]
+    //   },[])
+    // }
+    // console.log(uniq([1,2,2,3,3,5]))
+
+
+    // -------------------------
+    // function uniq(arr){
+    //   let res =[]
+    //   arr = arr.sort()
+    //   for(let i =0;i < arr.length; i++){
+    //     if(arr[i]!==arr[i-1]){
+    //       arr.push(arr[i])
+    //     }
+    //   }
+    //   return res
+    // }
+    // console.log(uniq([1,2,2,3,3,5]))
+
+
+  </script>
+</body>
+
+</html>
