@@ -1,0 +1,1 @@
+instanceOf 的原理 ：能在实例的 原型对象链 中找到该构造函数的prototype属性所指向的 原型对象，就返回true。

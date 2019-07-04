@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //显示原型 prototype  隐式原型__proto__
+    function myInstanceof(left, right) {
+      let prototype = right.prototype
+      left = left.__proto__
+      while (true) {
+        if (left === null)
+          return false
+        if (prototype === left)
+          return true
+        left = left.__proto__
+      }
+    }
+    let a = 'hello',
+      b = 123,
+      c = true,
+      d = undefined,
+      e = null,
+      // ------
+      f = {},
+      g = [],
+      h = function () { };
+    console.log(typeof (h))  //null 也是object
+    console.log(myInstanceof(g,Object))
+    
+
+    //准确判断数据类型
+    Object.prototype.toString.call(obj)
+  </script>
+</body>
+
+</html>
