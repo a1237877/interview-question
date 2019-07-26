@@ -32,3 +32,9 @@ function outputArr1(arr){
 }
 // console.log(outputArr(garr))
 console.log(outputArr1(garr))
+
+var a = {}
+var b = Object.prototype
+console.log(a.prototype ===b)
+console.log(a.__proto__ === b)
+console.log(Object.getPrototypeOf(a) ===b)
